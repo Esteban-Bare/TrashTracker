@@ -1,84 +1,127 @@
 /* style.css */
-body {
-  background-color: #111;
-  color: #eee;
-  font-family: 'Arial Black', sans-serif;
-  padding: 2rem;
+
+/* Reset de base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1, .test {
+/* Body */
+body {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  padding: 1rem 0;
   text-align: center;
+  background-color: #2c2c2c;
+  color: #fff;
   font-size: 2rem;
-  margin-bottom: 1rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* Titre principal */
+.test {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
   color: #ff4d4d;
 }
 
+/* Formulaires généraux */
 form {
-  background: #222;
+  background-color: #2c2c2c;
   padding: 1.5rem;
-  border-radius: 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.2);
   margin-bottom: 2rem;
-  box-shadow: 0 0 10px #000;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Inputs généraux */
+input, select, button {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 input, select {
-  width: 100%;
-  margin: 0.5rem 0;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 8px;
-  background-color: #333;
+  background-color: #444;
   color: #fff;
-  font-size: 1rem;
+  width: 200px;
 }
 
-input::placeholder {
-  color: #aaa;
-}
-
+/* Boutons */
 button {
-  width: 100%;
-  padding: 0.8rem;
   background-color: #ff4d4d;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: bold;
   color: #fff;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 button:hover {
   background-color: #ff1a1a;
 }
 
-/* Image d'aliment */
+/* Conteneur d’aliment */
+.alimentcontainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Image alimentaire */
 #food_img {
-  display: block;
-  margin: 0 auto 1rem auto;
-  max-width: 100px;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
   border-radius: 50%;
-  border: 2px solid #ff4d4d;
+  margin-right: 1rem;
+  background-color: #333;
 }
 
-/* Message de trashtalk */
-.insult {
-  color: #ff4d4d;
-  font-weight: bold;
+/* Liste */
+.list {
+  background-color: #2c2c2c;
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.list h2 {
+  margin-bottom: 1rem;
   text-align: center;
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  animation: shake 0.3s ease-in-out;
+  color: #ff4d4d;
 }
 
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
+/* Responsive */
+@media screen and (max-width: 600px) {
+  input, select {
+    width: 100%;
+  }
+
+  form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #food_img {
+    margin: 0 auto 1rem auto;
+  }
 }
