@@ -1,19 +1,24 @@
-const user_btn = document.getElementById('user_submit');
+const userForm = document.querySelector(".user_info");
 
 
-const tab = await getinfo();
 
-user_btn.addEventListener("click",getinfo);
-console.log(tab);
 
-function getinfo() {
-    const mail = document.getElementById('email').value;
-    const weight = document.getElementById('weight').value;
-    const gender = document.getElementById('gender').value;
-    const height = document.getElementById('height').value;
-    console.log(mail);
-    console.log(weight);
-    console.log(gender);
-    console.log(height)
 
-}   
+
+
+
+userForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // IMPORTANT pour ne pas recharger la page
+
+    const userInfos = new FormData(event.target);
+
+    const user = {
+        email: userInfos.get("email"),
+        weight: userInfos.get("weight"),
+        height: userInfos.get("height"),
+        age: userInfos.get("age"),
+        gender: userInfos.get("gender")
+    };
+
+    console.log(user);
+});

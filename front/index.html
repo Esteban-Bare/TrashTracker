@@ -17,31 +17,32 @@
 
 
 <body>
-  <div class="user_info">
+  <p class="test">test</p>
+  <form class="user_info" >
 
-    <input id="email" placeholder="mail" />
+    <input id="email" placeholder="mail" name="email"/>
 
-    <input id="weight" placeholder="poids" />
+    <input id="weight" placeholder="poids" name="weight" />
 
-    <input id="height" placeholder="taille"/>
-    <input id="age" type="number" placeholder="age" min="15" max="100">
+    <input id="height" placeholder="taille" name="height"/>
+    <input id="age" type="number" placeholder="age" min="15" max="100"name="age">
 
-    <select id="gender">
+    <select id="gender" name="gender">
       <option value="1">HOMME</option>
       <option value="2">FEMME</option>
     </select>
 
-    <button id="user_submit">ok</button>
+    <button type="submit" id="user_submit" name="user_submit">ok</button>
 
-  </div>
+  </form>
 
 
   <div class="alimentcontainer">
     <div class="aliment">
       <img id="food_img" src=""></img>
-      <input id="food_search" placeholder="votre aliment" />
-      <input id="food_quantity" type="number" min="1" max="10">
-      <button id="food_submit">ok</button>
+      <input id="food_search" placeholder="votre aliment" name="food_search" />
+      <input id="food_quantity" type="number" min="1" max="10" name="food_quantity">
+      <button id="food_submit" name="food_submit">ok</button>
     </div>
   </div>
 
