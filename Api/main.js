@@ -6,11 +6,18 @@ http.createServer(function (req, res) {
     if (req.url === '/send-email' && req.method === 'POST') {
         let body = '';
         req.on('data', chunk => {
-            body += chunk.toString(); // convert Buffer to string
+            body += chunk.toString();
         });
         req.on('end', () => {
-            const email = JSON.parse(body).email;
-            sendEmail(email);
+            const reqBody = JSON.parse(body);
+            const email = reqBody.email;
+            const gender = reqBody.gender;
+            const weight = reqBody.weight;
+            const height = reqBody.height;
+            const cals = reqBody.cals;
+            console.log(reqBody)
+
+            // sendEmail(email);
             res.end('Email sent to ' + email);
         });
     } else {
@@ -44,4 +51,13 @@ function sendEmail(email) {
             console.log('Email sent: ' + info.response);
         }
     });
+}
+
+function aboveOrUnderCals(imc, cals, gender) {
+
+}
+
+function calculateIMC (weight, height) {
+    const imc = weight / (height * height);
+    return imc;
 }
