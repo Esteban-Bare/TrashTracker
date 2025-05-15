@@ -1,3 +1,5 @@
+const { Json } = require("sequelize/lib/utils");
+
 const userForm = document.querySelector(".user_info");
 const addfood = document.querySelector(".aliment");
 const divlist = document.querySelector(".list");
@@ -39,10 +41,20 @@ userForm.addEventListener("submit", (event) => {///fonctionne
     data.user = user
 });
 
-submitg.addEventListener("submit", (event) => {///fonctionne
+ submitg.addEventListener("submit", async (event) =>  {///fonctionne
     event.preventDefault(); // IMPORTANT pour ne pas recharger la page
 
     console.log(data);
+    const res = await fetch("http://localhost:8080/send-email", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+
+    const resData = await res.json();
+    console.log(resData)
 });
 
 
