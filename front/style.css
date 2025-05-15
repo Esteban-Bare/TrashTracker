@@ -1,7 +1,84 @@
-*{
-    border: solid 1px black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* style.css */
+body {
+  background-color: #111;
+  color: #eee;
+  font-family: 'Arial Black', sans-serif;
+  padding: 2rem;
+}
+
+h1, .test {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff4d4d;
+}
+
+form {
+  background: #222;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px #000;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input, select {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #ff1a1a;
+}
+
+/* Image d'aliment */
+#food_img {
+  display: block;
+  margin: 0 auto 1rem auto;
+  max-width: 100px;
+  border-radius: 50%;
+  border: 2px solid #ff4d4d;
+}
+
+/* Message de trashtalk */
+.insult {
+  color: #ff4d4d;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
 }
